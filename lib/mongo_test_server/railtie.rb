@@ -16,6 +16,7 @@ module MongoTestServer
           server.path = `which mongod`.chomp
           server.use_ram_disk = use_ram_disk
         end
+        MongoTestServer::Mongod.server.stop
         MongoTestServer::Mongod.server.start
       end
     end
